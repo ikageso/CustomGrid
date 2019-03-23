@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomGrid.Views.TypeTemplate"
+            BackgroundColor="LightGray">
+    <Frame Margin="3" BackgroundColor="White" CornerRadius="5" HasShadow="False">
+        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Name}" />
+    </Frame>
+</Grid>

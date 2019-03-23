@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomGrid.Views.MainPage"
+             xmlns:control="clr-namespace:CustomGrid.Views"
+             Title="{Binding Title}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <control:StackView HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        ItemsSource="{Binding ListOfDataStack}"
+                        CommandParameter="{Binding}"
+                        Command="{Binding ClickCommandStack}"
+                        IsClippedToBounds="False">
+
+        </control:StackView>
+
+        <control:GridView Grid.Row="1" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        MaxColumns="3"
+                        ItemsSource="{Binding ListOfData}"
+                        CommandParameter="{Binding}"
+                        Command="{Binding ClickCommand}"
+                        IsClippedToBounds="False">
+        <control:GridView.TileHeight>
+            <OnPlatform x:TypeArguments="x:Single"
+                      iOS="60"
+                      Android="60"
+                       />
+        </control:GridView.TileHeight>
+    </control:GridView>
+    </Grid>
+</ContentPage>
